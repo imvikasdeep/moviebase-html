@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $mid-blue;
+    z-index: 99;
+}
+
+.brand-logo {
+    
+    img {
+        max-width: 200px;
+        height: 45px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    .nav-burger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        @include rwd(768) {
+            display: none;
+        }
+
+        .burger-bar {
+            display: inline-block;
+            width: 25px;
+            height: 2px;
+            margin: 3px;
+            background: $white-color;
+            transform-origin: 0% 50%;
+            @include transition;
+            
+            &.bar-2 {
+                width: 13px;
+            }
+        }
+    }
+
+
+    
+    .navbar-nav {
+
+        @include md {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            background: $mid-blue;
+            height: calc(100vh - 78px);
+            transform: translateY(-100%);
+            z-index: 9998;
+            @include transition
+        }
+        
+        ul {
+            display: flex;
+
+            @include md {
+                flex-direction: column;
+            }
+        
+            li {
+        
+                a {
+                    display: block;
+                    padding: 0 .5rem;
+                    font-weight: 500;
+
+                    @include md {
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &.open {
+
+        .navbar-nav {
+            top: 78px;
+            transform: translateY(0);
+        }
+        
+        .nav-burger { 
+
+            .bar-1 {
+                transform: rotate(40deg);
+            }
+
+            .bar-2 {
+                opacity: 0;
+            }
+            
+            .bar-3 {
+                transform: rotate(-40deg);
+            }
+        }
+
+    }
+}
