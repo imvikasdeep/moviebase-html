@@ -21,7 +21,7 @@
     @include transition;
 
     &:hover {
-        background-color: transparent;
+        background-color: $white-color;
         color: $primary-color;
     }
 }

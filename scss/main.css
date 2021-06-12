@@ -371,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button:hover {
-  background-color: transparent;
+  background-color: #fff;
   color: #e94560;
 }
 
@@ -602,5 +602,51 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   line-height: 2;
   margin-top: 2rem;
+}
+
+.pagenotfound {
+  min-height: 550px;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  z-index: 0;
+}
+
+.pagenotfound::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(19, 23, 32, 0.4);
+  z-index: -1;
+}
+
+.pagenotfound h1 {
+  font-size: 12rem;
+  line-height: 1;
+  letter-spacing: 1rem;
+  text-shadow: 0 0 20px #e94560;
+}
+
+.pagenotfound h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
