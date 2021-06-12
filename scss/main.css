@@ -343,7 +343,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   height: 30px;
   right: 10px;
-  top: 45%;
+  top: 50%;
   -webkit-transform: translateY(-45%);
           transform: translateY(-45%);
   color: #e0e0e0;
