@@ -645,6 +645,13 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 20px #e94560;
 }
 
+@media (max-width: 767px) {
+  .pagenotfound h1 {
+    font-size: 8rem;
+    letter-spacing: .8rem;
+  }
+}
+
 .pagenotfound h2 {
   font-size: 1.6rem;
   margin-bottom: 2rem;

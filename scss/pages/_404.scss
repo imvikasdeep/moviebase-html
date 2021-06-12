@@ -32,6 +32,11 @@
         line-height: 1;
         letter-spacing: 1rem;
         text-shadow: 0 0 20px $primary-color;
+
+        @include md {
+            font-size: 8rem;
+            letter-spacing: .8rem;
+        }
     }
 
     h2 {
