@@ -69,7 +69,7 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-html {
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -210,6 +210,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99;
 }
 
+.brand-logo {
+  height: 45px;
+}
+
 .brand-logo img {
   max-width: 200px;
   height: 45px;
@@ -225,7 +229,12 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem 0;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 0 .8rem;
+  }
 }
 
 .navbar .nav-burger {
@@ -261,19 +270,85 @@ h1, h2, h3, h4, h5, h6 {
   width: 13px;
 }
 
+.navbar .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 767px) {
   .navbar .navbar-nav {
     position: absolute;
     width: 100%;
     left: 0;
     background: #151f30;
-    height: calc(100vh - 78px);
+    height: calc(100vh - 73px);
+    padding: 20px;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    overflow-y: scroll;
     z-index: 9998;
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
   }
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-nav .searchform {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar .navbar-nav .searchform {
+    margin-left: 20px;
+  }
+}
+
+.navbar .navbar-nav .searchform .search__group {
+  position: relative;
+  border-radius: 40px;
+  padding: 5px 20px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+}
+
+.navbar .navbar-nav .searchform .search__group .search__input {
+  background: transparent;
+  color: #e0e0e0;
+  border: none;
+  height: 28px;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.navbar .navbar-nav .searchform .search__group .search__input:hover, .navbar .navbar-nav .searchform .search__group .search__input:active, .navbar .navbar-nav .searchform .search__group .search__input:focus {
+  border: none;
+  outline: none;
+}
+
+.navbar .navbar-nav .searchform .search__group button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  height: 30px;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #e0e0e0;
+  cursor: pointer;
 }
 
 .navbar .navbar-nav ul {
@@ -288,23 +363,91 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
 }
 
-.navbar .navbar-nav ul li a {
+.navbar .navbar-nav ul li {
+  position: relative;
+}
+
+.navbar .navbar-nav ul li.dropdown > a {
+  position: relative;
+  line-height: 70px;
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-nav ul li.dropdown > a {
+    line-height: 50px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.navbar .navbar-nav ul li.dropdown > a:focus ~ .submenu {
   display: block;
+}
+
+.navbar .navbar-nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 .5rem;
   font-weight: 500;
 }
 
 @media (max-width: 767px) {
   .navbar .navbar-nav ul li a {
-    padding: 10px 20px;
+    padding: 0;
   }
 }
 
+.navbar .navbar-nav ul li .submenu {
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #151f30;
+  top: 100%;
+  min-width: 150px;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-nav ul li .submenu {
+    position: relative;
+    height: 60vh;
+    overflow-y: scroll;
+  }
+}
+
+.navbar .navbar-nav ul li .submenu li a {
+  display: block;
+  padding: 8px 15px;
+}
+
+@media (max-width: 767px) {
+  .navbar .navbar-nav ul li .submenu li a {
+    padding: 8px 0;
+  }
+}
+
+.navbar .navbar-nav ul li .submenu li a:hover {
+  background-color: #e94560;
+  color: #e0e0e0;
+}
+
 .navbar.open .navbar-nav {
-  top: 78px;
+  top: 73px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
