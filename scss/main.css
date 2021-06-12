@@ -374,8 +374,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button:hover {
-  background-color: #fff;
-  color: #e94560;
+  background-color: #b3152f;
+  border-color: #b3152f;
+  color: #e0e0e0;
 }
 
 .cards-wrapper {
@@ -527,6 +528,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .cards-wrapper .card:hover .card__title a {
   color: #e94560;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3rem;
 }
 
 .moviedetails {
