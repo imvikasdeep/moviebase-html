@@ -17,8 +17,8 @@
         margin-top: 30px;
         overflow: hidden;
         width: ($max-width / 6);
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
         @include transition;
 
         @include xl {
@@ -50,6 +50,10 @@
             opacity: 0;
             z-index: 3;
             @include transition;
+            
+            @include md {
+                opacity: 1;
+            }
             
             i {
                 font-size: .9rem;

@@ -402,8 +402,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 30px;
   overflow: hidden;
   width: 196.66667px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
 }
@@ -450,6 +450,12 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
   -webkit-transition: .4s ease-in-out;
   transition: .4s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .cards-wrapper .card .card__rating {
+    opacity: 1;
+  }
 }
 
 .cards-wrapper .card .card__rating i {
